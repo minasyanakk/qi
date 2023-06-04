@@ -1,7 +1,7 @@
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  name: {{ .Release.Name }}-cronjob
+  name:  
 spec:
   schedule: "*/5 * * * *"
   jobTemplate:
@@ -10,6 +10,6 @@ spec:
         spec:
           containers:
           - name: {{ .Release.Name }}-container
-            image: your-image:tag
-            command: ["/your/command"]
+            image:  {{ .Values.image.repository}}:{{ .Values.image.tag }}
+            command: ["python3 main.py"]
           restartPolicy: OnFailure
