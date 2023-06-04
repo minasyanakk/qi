@@ -22,7 +22,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          registry: ghcr.io
       - name: Build&Push
         env:
           APP: "qi"
