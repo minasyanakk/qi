@@ -22,8 +22,11 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+          registry: registry.hub.docker.com
       - name: Build&Push
         env:
           APP: "qi"
           REGISTRY: ${{ secrets.DOCKERHUB_USERNAME }}
         run: make image push TARGETARCH=$TARGETARCH
+      - name: Clean
+        run: make clean TARGETARCH=$TARGETARCH
