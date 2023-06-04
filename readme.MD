@@ -1,15 +1,13 @@
-Документация проекта "Quarto Imperium"
+Introduction
 
-Введение
+"Quarto Imperium" is a project that automatically publishes paintings, architecture, and other images on a public Telegram page known as "quartoimperium_public". It provides the ability to automatically publish various types of images without the need for manual intervention.
 
-"Quarto Imperium " - это проект, который автоматически публикует живопись, архитектуру и другие изображения на публичной странице Telegram, известной как "quartoimperium_public". Он предоставляет возможность  автоматически публиковать различные виды изображений без необходимости вручную выполнять эту задачу.
+This document describes the installation and configuration process for the "Quarto Imperium" project to run in a container. To successfully launch and operate the project, you will need several environment variables.
 
-Этот документ описывает процесс установки и настройки проекта "Quarto Imperium" для запуска контейнера. Для успешного запуска и работы проекта вам понадобятся несколько переменных окружения.
+Environment Variables
 
-Переменные окружения
+Before running the "Quarto Imperium" project container, make sure you have the following environment variables:
 
-Прежде чем запускать контейнер проекта "Quarto Imperium", убедитесь, что у вас есть следующие переменные окружения:
+CHATID: This is the Telegram chat identifier corresponding to your "quartoimperium_public" channel.
 
-CHATID: Это идентификатор чата Telegram, который соответствует вашему каналу "quartoimperium_public". 
-
-TOKEN: Это токен авторизации вашего бота в Telegram API. 
+TOKEN: This is the authentication token for your bot in the Telegram API.
