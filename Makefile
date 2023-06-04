@@ -10,6 +10,6 @@ APP := $(shell basename $(shell git remote get-url origin))
 
 
 image:
-	docker build . -t ${REGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH}
+	docker build . -t ${REGISTRY}/${APP}:${TARGETOS}-${VERSION}-${TARGETARCH}
 push:
-	docker push ${REGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH}
+	docker push ${REGISTRY}/${APP}:${TARGETOS}-${VERSION}-${TARGETARCH}
