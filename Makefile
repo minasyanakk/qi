@@ -1,4 +1,4 @@
-REGISTRY := ghcr.io/minasyanakk
+REGISTRY := minasyanakk
 VERSION := $(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETOS := linux
 #linux darwin window
