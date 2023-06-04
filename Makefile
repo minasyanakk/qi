@@ -3,7 +3,6 @@ VERSION := $(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short
 TARGETOS := linux
 #linux darwin window
 TARGETARCH := amd64
-APP := qi
 #amd64 arm64
 CGO_ENABLED := 0
 APP := $(shell basename $(shell git remote get-url origin))
