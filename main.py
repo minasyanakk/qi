@@ -10,6 +10,7 @@ import requests
 
 _TOKEN = os.environ['TOKEN']
 _CHATID = os.environ['CHATID']
+print(_CHATID,_TOKEN)
 
 def formatin_date():
     # Создание подключения к базе данных SQLite
