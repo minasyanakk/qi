@@ -13,8 +13,8 @@ spec:
             image: {{ .Values.image.repository}}:{{ .Values.image.tag }}
             env:
             - name: TOKEN
-              value: {{ .Values.secret.TOKEN }}
+              value: "{{ .Values.secret.TOKEN }}"
             - name: CHATID
-              value: {{ .Values.secret.CHATID }}
+              value: "{{ .Values.secret.CHATID }}"
           сommand: ["python3 main.py"]
           restartPolicy: OnFailure
