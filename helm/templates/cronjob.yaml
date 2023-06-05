@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: my-cronjob
+  name: qijob
 spec:
   schedule: "*/5 * * * *"
   jobTemplate:
@@ -9,7 +9,7 @@ spec:
       template:
         spec:
           containers:
-          - name: my-cronjob-container
+          - name: qijob-container
             image:  {{ .Values.image.repository}}:{{ .Values.image.tag }}
             env:
             - TOKEN: {{ .Values.secret.TOKEN }}
