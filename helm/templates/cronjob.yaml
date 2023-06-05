@@ -11,5 +11,8 @@ spec:
           containers:
           - name: {{ .Release.Name }}-container
             image:  {{ .Values.image.repository}}:{{ .Values.image.tag }}
+            env:
+            - TOKEN: {{ .Values.secret.env }}
+            - CHATID: {{ .Values.secret.env }}
             command: ["python3 main.py"]
           restartPolicy: OnFailure
