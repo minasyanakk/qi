@@ -11,3 +11,8 @@ Before running the "Quarto Imperium" project container, make sure you have the f
 CHATID: This is the Telegram chat identifier corresponding to your "quartoimperium_public" channel.
 
 TOKEN: This is the authentication token for your bot in the Telegram API.
+
+## Authors
+
+- [@Arthur Minasyan](https://www.github.com/minasyanakk)
+
