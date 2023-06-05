@@ -3,17 +3,18 @@ kind: CronJob
 metadata:
   name: qijob
 spec:
-  schedule: "*/5 * * * *"
+  schedule: "*/1 * * * *"
   jobTemplate:
     spec:
       template:
         spec:
           containers:
-          - name: qijob-container
-            image:  {{ .Values.image.repository}}:{{ .Values.image.tag }}
+          - name: my-container
+            image: {{ .Values.image.repository}}:{{ .Values.image.tag }}
             env:
-            - TOKEN: {{ .Values.secret.TOKEN }}
-            - CHATID: {{ .Values.secret.CHATID }}
-
-            command: ["python3 main.py"]
+            - name: TOKEN
+              value: {{ .Values.secret.TOKEN }}
+            - name: CHATID
+              value: {{ .Values.secret.CHATID }}
+          сommand: ["python3 main.py"]
           restartPolicy: OnFailure
