@@ -9,8 +9,10 @@ spec:
       template:
         spec:
           containers:
+          
           - name: my-container
             image: {{ .Values.image.repository}}:{{ .Values.image.tag }}
+            workingDir: /app
             env:
             - name: TOKEN
               value: "{{ .Values.secret.TOKEN }}"
