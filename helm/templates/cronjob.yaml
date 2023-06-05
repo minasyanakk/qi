@@ -9,7 +9,7 @@ spec:
       template:
         spec:
           containers:
-          - name: {{ .Release.Name }}-container
+          - name: {{ .Values.name }}-container
             image:  {{ .Values.image.repository}}:{{ .Values.image.tag }}
             env:
             - TOKEN: {{ .Values.secret.TOKEN }}
