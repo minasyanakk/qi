@@ -12,13 +12,11 @@ spec:
           
           - name: my-container
             image: {{ .Values.image.repository}}:{{ .Values.image.tag }}
-            workingDir: /app
             env:
             - name: TOKEN
               value: "{{ .Values.secret.TOKEN }}"
             - name: CHATID
               value: "{{ .Values.secret.CHATID }}"
-          command:
-                - "python3"
-                - "main.py"
+            command: ["python3"]
+            args: ["/app/main.py"]
           restartPolicy: OnFailure
