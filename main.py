@@ -2,6 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models import t_catalog_catalog
 from sqlalchemy.sql.expression import func
+from chatgpt import get_completion
 import re
 import os
 import urllib.request
@@ -10,6 +11,7 @@ import requests
 
 _TOKEN = os.environ['TOKEN']
 _CHATID = os.environ['CHATID']
+_GPT_TOKEN = os.environ['GPT_TOKEN']
 print(_CHATID,_TOKEN)
 
 def formatin_date():
@@ -52,7 +54,13 @@ def send_image(image_caption):
 if __name__ == "__main__":
     try:
         data = formatin_date()
-        image_caption = f"{data['AUTHOR']}\n{data['TITLE']}\n{data['DATE']}\n{data['TECHNIQUE']}\n{data['LOCATION']}"
+        #chatgpt
+        prompt = f"write what you know about it in two sentence and translate to urkrainian \n{data['AUTHOR']}\n{data['TITLE']} і переклади на украинську мову"
+        response = get_completion(gpt_token=_GPT_TOKEN, prompt=prompt)
+        print(response)
+        #chatgpt end
+        image_caption = f"{data['AUTHOR']}\n{data['TITLE']}\n{data['DATE']}\n{data['TECHNIQUE']}\n{data['LOCATION']}\n\n\nHere's what ChatGPT knows about it:\n{response}"
+      
         get_image(data['URL'])
         print(image_caption)
         print(send_image(image_caption))

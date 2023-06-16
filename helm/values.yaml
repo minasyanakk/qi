@@ -5,3 +5,4 @@ secret:
   name: "Telegram"
   TOKEN: "Token"
   CHATID: "token"
+  GPT_TOKEN: "TOKEN"
