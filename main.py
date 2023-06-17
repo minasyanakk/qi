@@ -59,7 +59,7 @@ if __name__ == "__main__":
         response = get_completion(gpt_token=_GPT_TOKEN, prompt=prompt)
         print(response)
         #chatgpt end
-        image_caption = f"{data['AUTHOR']}\n{data['TITLE']}\n{data['DATE']}\n{data['TECHNIQUE']}\n{data['LOCATION']}\n\n\nHere's what ChatGPT knows about it:\n{response}"
+        image_caption = f"{data['AUTHOR']}\n{data['TITLE']}\n{data['DATE']}\n{data['TECHNIQUE']}\n{data['LOCATION']}\n\n\nHere's what ChatGPT knows about it\nОсь що ChatGPT знає про це:\n\n{response}"
       
         get_image(data['URL'])
         print(image_caption)
