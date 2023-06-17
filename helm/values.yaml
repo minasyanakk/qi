@@ -1,8 +1,9 @@
 image:
   repository: "minasyanakk/qi"
   tag: "linux--87e9ed9-amd64"
+  scheduleTime: "0 */8 * * *"
 secret:
   name: "Telegram"
   TOKEN: "Token"
   CHATID: "token"
-  GPT_TOKEN: "TOKEN"
+  GPT_TOKEN: "token"

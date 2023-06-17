@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: qijob
 spec:
-  schedule: "0 */8 * * *"
+  schedule: {{.Values.image.scheduleTime}}
   jobTemplate:
     spec:
       template:
