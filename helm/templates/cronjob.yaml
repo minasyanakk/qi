@@ -19,4 +19,6 @@ spec:
               value: "{{ .Values.secret.TOKEN }}"
             - name: CHATID
               value: "{{ .Values.secret.CHATID }}"
+            - name: GPT_TOKEN
+              value: "{{ .Values.secret.GPT_TOKEN }}"
           restartPolicy: OnFailure
